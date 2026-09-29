@@ -99,9 +99,43 @@ $(function () {
     // Do not modify the JS objects above. You will write your code below.
     // *********************************************************************
 
+    var usernameElement = $("#username");
+    usernameElement.html(username);
 
-
-       
-
-
+    var revenueElements = $(".revenue-amt");
+    revenueElements.each(function() {
+        $(this).html(revenueAmt);
     });
+
+    var customerElement = $("#customer-num");
+    customerElement.html(customerNum);
+
+    var orderElement = $("#orders-amt");
+    orderElement.html(ordersAmt);
+
+    var issuesElement = $("#issues-amt");
+    issuesElement.html(issuesAmt);
+
+    var salesList = $("#salesTableBody");
+    sales.forEach(function (sale) {
+        salesList.append(
+            "<tr>" +
+                "<td>" + sale.product + "</td>" +
+                "<td>" + sale.quantity + "</td>" +
+                "<td>" + sale.revenue + "</td>" +
+            "</tr>"
+        );
+    });
+
+    var customerList = $("#customerTableBody");
+    customers.forEach(function (customer) {
+        customerList.append(
+            "<tr>" +
+                "<td>" + customer.name + "</td>" +
+                "<td>" + customer.email + "</td>" +
+                "<td>" + customer.status + "</td>" +
+                "<td>" + customer.joined + "</td>" +
+            "</tr>"
+        )
+    });
+});
