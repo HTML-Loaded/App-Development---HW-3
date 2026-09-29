@@ -138,4 +138,25 @@ $(function () {
             "</tr>"
         )
     });
+
+    var statusMessages = $("#system-status-list");
+    messages.forEach(function (message) {
+        statusMessages.append(
+            "<li>" + message.messsage + "</li>"
+        )
+    });
+
+    var notificationMessages = $("#notifications-list");
+    notifications.forEach(function (notification) {
+        notificationMessages.append(
+            "<li>" + notification.messsage + "</li>"
+        )
+    })
+
+    var taskMessages = $("#tasks-list");
+    tasks.forEach(function (task) {
+        taskMessages.append(
+            "<li>" + task.messsage + "</li>"
+        )
+    })
 });
